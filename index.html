@@ -1,85 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>90+ | Football all along</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>90'+ | Football all along</title>
+  <style>
+    :root {
+      --bg-dark: #111;
+      --text-dark: #fff;
+      --bg-light: #fff;
+      --text-light: #111;
+      --accent: #00e0ff;
+      --font: 'Segoe UI', sans-serif;
+    }
+
+    [data-theme="dark"] {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    [data-theme="light"] {
+      background-color: var(--bg-light);
+      color: var(--text-light);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: var(--font);
+    }
+
+    body {
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    header {
+      background-color: var(--accent);
+      color: #000;
+      padding: 1rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    #theme-toggle {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    section h2 {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      padding: 1.5rem;
+      text-align: center;
+      border-top: 1px solid #333;
+    }
+
+    footer img {
+      height: 30px;
+      display: block;
+      margin: 0 auto 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <div class="logo">
-      <img src="logo.png" alt="90+ Logo">
-      <h1>90+</h1>
-      <p>Football all along</p>
-    </div>
     <nav>
-      <ul>
+      <div class="logo">
+        <img src="logo.png" alt="90+ Logo">
+        <span>90'+</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#news">News</a></li>
-        <li><a href="#live">Live</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <button id="theme-toggle">🌞</button>
     </nav>
   </header>
 
-  <section class="hero">
-    <h2>Welcome to 90+</h2>
-    <p>Your football hub – News, Scores, and More!</p>
-    <a href="#news" class="btn">Explore Now</a>
-  </section>
+  <main>
+    <section id="home">
+      <h1>Welcome to 90'+</h1>
+      <p>Football all along</p>
+    </section>
 
-  <section id="news" class="news">
-    <h2>Latest News</h2>
-    <div class="news-container">
-      <div class="news-card">
-        <img src="news1.jpg" alt="News">
-        <h3>Barcelona stuns Madrid in El Clasico</h3>
-        <p>Read the dramatic end to last night’s epic clash.</p>
-      </div>
-      <div class="news-card">
-        <img src="news2.jpg" alt="News">
-        <h3>Messi in MLS – New Records</h3>
-        <p>Lionel Messi continues to impress across the globe.</p>
-      </div>
-    </div>
-  </section>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>90'+ covers football beyond the 90 minutes — stories, highlights, and moments that matter.</p>
+    </section>
 
-  <section id="live" class="live">
-    <h2>Live Match</h2>
-    <div class="match-card">
-      <p><strong>Barcelona</strong> vs <strong>Atletico Madrid</strong></p>
-      <p>Kickoff: 21:00 GMT | Camp Nou</p>
-      <a href="#" class="btn">Watch Live</a>
-    </div>
-  </section>
+    <section id="news">
+      <h2>Latest News</h2>
+      <p>Coming soon: updates, match insights, and more!</p>
+    </section>
 
-  <section id="gallery" class="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery-grid">
-      <img src="match1.jpg" alt="Gallery Image">
-      <img src="match2.jpg" alt="Gallery Image">
-      <img src="fans.jpg" alt="Gallery Image">
-      <img src="stadium.jpg" alt="Gallery Image">
-    </div>
-  </section>
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <p>Matchday moments, fan captures, and visuals. Stay tuned!</p>
+    </section>
 
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <form action="https://formspree.io/f/yourcode" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Connect with us on <a href="https://www.facebook.com/share/1N4fL7Yrbs/" target="_blank">Facebook</a></p>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 90+ – Football all along</p>
-    <div class="socials">
-      <a href="https://facebook.com/90plus"><img src="facebook.svg" alt="Facebook"></a>
-      <a href="mailto:support@90minplus.store">Email Us</a>
-    </div>
+    <img src="logo.png" alt="90+ Logo Small">
+    <p>Football all along</p>
   </footer>
+
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    toggle.addEventListener('click', () => {
+      if (html.getAttribute('data-theme') === 'dark') {
+        html.setAttribute('data-theme', 'light');
+        toggle.textContent = '🌙';
+      } else {
+        html.setAttribute('data-theme', 'dark');
+        toggle.textContent = '🌞';
+      }
+    });
+  </script>
 </body>
 </html>
