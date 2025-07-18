@@ -1,69 +1,85 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>90'+ | Football all along</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-      }
-    </script>
-  </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>90+ | Football all along</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="90+ Logo">
+      <h1>90+</h1>
+      <p>Football all along</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#news">News</a></li>
+        <li><a href="#live">Live</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-all duration-300">
-    <!-- Header -->
-    <header class="flex justify-between items-center p-4 shadow-md">
-      <div class="flex items-center gap-3">
-        <img src="logo.jpg" alt="90+ Logo" class="h-10 w-auto" />
-        <h1 class="text-xl font-bold">90'+ <span class="text-sm text-gray-500 dark:text-gray-400">| Football all along</span></h1>
-      </div>
-      <div class="flex items-center gap-4">
-        <a href="https://www.facebook.com/share/1N4fL7Yrbs/" target="_blank" class="text-blue-600 hover:underline">Facebook</a>
-        <button id="themeToggle" class="bg-gray-200 dark:bg-gray-800 p-2 rounded-full">
-          <span id="themeIcon">🌞</span>
-        </button>
-      </div>
-    </header>
+  <section class="hero">
+    <h2>Welcome to 90+</h2>
+    <p>Your football hub – News, Scores, and More!</p>
+    <a href="#news" class="btn">Explore Now</a>
+  </section>
 
-    <!-- Hero Section -->
-    <section class="text-center py-16 px-4 md:px-20">
-      <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Welcome to 90'+</h2>
-      <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-xl mx-auto">
-        Dive into the passion of football—live scores, highlights, and everything extra time brings!
-      </p>
-    </section>
-
-    <!-- Featured Cards -->
-    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 md:px-20 pb-16">
-      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow p-6 hover:shadow-lg transition">
-        <h3 class="text-2xl font-semibold mb-2">Latest News</h3>
-        <p class="text-gray-600 dark:text-gray-400">Stay updated with all the latest headlines in football.</p>
+  <section id="news" class="news">
+    <h2>Latest News</h2>
+    <div class="news-container">
+      <div class="news-card">
+        <img src="news1.jpg" alt="News">
+        <h3>Barcelona stuns Madrid in El Clasico</h3>
+        <p>Read the dramatic end to last night’s epic clash.</p>
       </div>
-      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow p-6 hover:shadow-lg transition">
-        <h3 class="text-2xl font-semibold mb-2">Match Highlights</h3>
-        <p class="text-gray-600 dark:text-gray-400">Watch key moments and thrilling match recaps.</p>
+      <div class="news-card">
+        <img src="news2.jpg" alt="News">
+        <h3>Messi in MLS – New Records</h3>
+        <p>Lionel Messi continues to impress across the globe.</p>
       </div>
-      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow p-6 hover:shadow-lg transition">
-        <h3 class="text-2xl font-semibold mb-2">Live Scores</h3>
-        <p class="text-gray-600 dark:text-gray-400">Real-time scores from across the football world.</p>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-100 dark:bg-gray-800 text-center text-sm py-6">
-      <p>&copy; 2025 90'+. All rights reserved. | Football all along</p>
-    </footer>
+  <section id="live" class="live">
+    <h2>Live Match</h2>
+    <div class="match-card">
+      <p><strong>Barcelona</strong> vs <strong>Atletico Madrid</strong></p>
+      <p>Kickoff: 21:00 GMT | Camp Nou</p>
+      <a href="#" class="btn">Watch Live</a>
+    </div>
+  </section>
 
-    <!-- Dark Mode Script -->
-    <script>
-      const toggle = document.getElementById("themeToggle");
-      const icon = document.getElementById("themeIcon");
-      toggle.addEventListener("click", () => {
-        document.documentElement.classList.toggle("dark");
-        icon.textContent = document.documentElement.classList.contains("dark") ? "🌙" : "🌞";
-      });
-    </script>
-  </body>
+  <section id="gallery" class="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <img src="match1.jpg" alt="Gallery Image">
+      <img src="match2.jpg" alt="Gallery Image">
+      <img src="fans.jpg" alt="Gallery Image">
+      <img src="stadium.jpg" alt="Gallery Image">
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form action="https://formspree.io/f/yourcode" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 90+ – Football all along</p>
+    <div class="socials">
+      <a href="https://facebook.com/90plus"><img src="facebook.svg" alt="Facebook"></a>
+      <a href="mailto:support@90minplus.store">Email Us</a>
+    </div>
+  </footer>
+</body>
 </html>
